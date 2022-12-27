@@ -58,8 +58,32 @@
             "is_ready": true,
             "gambar": "cheese-burger.jpg",
             "category": {
-                "id": 1,
+                "id": 3,
                 "nama": "Cemilan"
+            }
+        },
+        {
+            "id": 5,
+            "kode": "K-05",
+            "nama": "Es Jeruk",
+            "harga": "5000",
+            "is_ready": true,
+            "gambar": "es-jeruk.jpg",
+            "category": {
+                "id": 2,
+                "nama": "Minuman"
+            }
+        },
+        {
+            "id": 6,
+            "kode": "K-06",
+            "nama": "Es Teh",
+            "harga": "8000",
+            "is_ready": true,
+            "gambar": "es-teh.jpg",
+            "category": {
+                "id": 2,
+                "nama": "Minuman"
             }
         }
     ],
