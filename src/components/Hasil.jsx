@@ -5,7 +5,6 @@ import { numberWithCommas } from '../utils/numberFormat';
 export default class Hasil extends Component {
     render() {
         const { isiKeranjang } = this.props;
-        console.log(isiKeranjang);
         return (
             <Col md={3} mt="2" >
                 <h5 className='text-center'><strong>Hasil</strong></h5>
