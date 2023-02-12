@@ -30,7 +30,7 @@
       "id": 2,
       "kode": "K-02",
       "nama": "Nasi Goreng Telur",
-      "harga": "14000",
+      "harga": 14000,
       "is_ready": true,
       "gambar": "nasi-goreng-telor.jpg",
       "category": {
@@ -42,7 +42,7 @@
       "id": 3,
       "kode": "K-03",
       "nama": "Nasi Rames",
-      "harga": "14000",
+      "harga": 14000,
       "is_ready": true,
       "gambar": "nasi-rames.jpg",
       "category": {
@@ -54,7 +54,7 @@
       "id": 4,
       "kode": "K-04",
       "nama": "Cheese Burger",
-      "harga": "16000",
+      "harga": 16000,
       "is_ready": true,
       "gambar": "cheese-burger.jpg",
       "category": {
@@ -66,7 +66,7 @@
       "id": 5,
       "kode": "K-05",
       "nama": "Es Jeruk",
-      "harga": "5000",
+      "harga": 5000,
       "is_ready": true,
       "gambar": "es-jeruk.jpg",
       "category": {
@@ -78,7 +78,7 @@
       "id": 6,
       "kode": "K-06",
       "nama": "Es Teh",
-      "harga": "8000",
+      "harga": 8000,
       "is_ready": true,
       "gambar": "es-teh.jpg",
       "category": {
@@ -87,75 +87,6 @@
       }
     }
   ],
-  "keranjangs": [
-    {
-      "jumlah": 2,
-      "total_harga": 32000,
-      "product": {
-        "id": 1,
-        "kode": "K-01",
-        "nama": "Sate Ayam",
-        "harga": 16000,
-        "is_ready": true,
-        "gambar": "sate-ayam.jpg",
-        "category": {
-          "id": 1,
-          "nama": "Makanan"
-        }
-      },
-      "id": 1
-    },
-    {
-      "jumlah": 2,
-      "total_harga": "1400014000",
-      "product": {
-        "id": 2,
-        "kode": "K-02",
-        "nama": "Nasi Goreng Telur",
-        "harga": "14000",
-        "is_ready": true,
-        "gambar": "nasi-goreng-telor.jpg",
-        "category": {
-          "id": 1,
-          "nama": "Makanan"
-        }
-      },
-      "id": 2
-    },
-    {
-      "jumlah": 1,
-      "total_harga": "14000",
-      "product": {
-        "id": 3,
-        "kode": "K-03",
-        "nama": "Nasi Rames",
-        "harga": "14000",
-        "is_ready": true,
-        "gambar": "nasi-rames.jpg",
-        "category": {
-          "id": 1,
-          "nama": "Makanan"
-        }
-      },
-      "id": 3
-    },
-    {
-      "jumlah": 1,
-      "total_harga": "5000",
-      "product": {
-        "id": 5,
-        "kode": "K-05",
-        "nama": "Es Jeruk",
-        "harga": "5000",
-        "is_ready": true,
-        "gambar": "es-jeruk.jpg",
-        "category": {
-          "id": 2,
-          "nama": "Minuman"
-        }
-      },
-      "id": 4
-    }
-  ],
+  "keranjangs": [],
   "pesanans": []
 }
