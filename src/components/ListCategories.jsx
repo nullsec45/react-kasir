@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Col, ListGroup } from "react-bootstrap";
 import axios from 'axios';
-import { API_URL } from '../utils/constant';
+import { API_URL } from '../utils';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUtensils, faCoffee, faCheese } from "@fortawesome/free-solid-svg-icons"
 
