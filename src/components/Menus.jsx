@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Col } from "react-bootstrap"
-import { numberWithCommas } from '../utils/numberFormat'
+import { numberWithCommas } from '../utils'
 
 const Menus = ({ menu, masukKeranjang }) => {
     return (
