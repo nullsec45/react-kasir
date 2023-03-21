@@ -1,7 +1,7 @@
 import { ListCategories, Hasil, Menus } from "../components"
 import { Row, Col, Container } from "react-bootstrap"
 import React, { Component } from 'react'
-import { API_URL } from "../utils/constant"
+import { API_URL } from "../utils"
 import axios from "axios"
 import swal from "sweetalert"
 import "../index.css"
