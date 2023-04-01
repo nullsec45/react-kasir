@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col, ListGroup, Row, Badge } from "react-bootstrap"
+import { Col, ListGroup, Row, Badge, Card } from "react-bootstrap"
 import { numberWithCommas, API_URL } from '../utils';
 import TotalHarga from "./TotalHarga";
 import ModalKeranjang from './ModalKeranjang';
@@ -68,8 +68,9 @@ export default class Hasil extends Component {
             keterangan: this.state.keterangan
         }
         axios.put(API_URL + "keranjangs/" + this.state.keranjangDetail.id, data).then(res => {
+            this.props.getListKeranjang();
             swal({
-                title: "Update Pesanana.",
+                title: "Update Pesananan.",
                 text: "Update Pesanan Berhasil!. " + data.product.nama,
                 icon: "success",
                 timer: 1500
@@ -84,6 +85,7 @@ export default class Hasil extends Component {
         this.handleClose();
 
         axios.delete(API_URL + "keranjangs/" + id).then(res => {
+            this.props.getListKeranjang();
             swal({
                 title: "Hapus pesanan",
                 text: "Pesanan " + this.state.keranjangDetail.product.nama + " berhasil dihapus.",
@@ -102,25 +104,27 @@ export default class Hasil extends Component {
                 <h5 className='text-center'><strong>Hasil</strong></h5>
                 <hr />
                 {isiKeranjang.length !== 0 && (
-                    <ListGroup>
-                        <ModalKeranjang handleClose={this.handleClose} {...this.state} tambah={this.tambah} kurang={this.kurang} changeHandler={this.changeHandler} handleSubmit={this.handleSubmit} hapusPesanan={this.hapusPesanan} />
-                        {isiKeranjang.map((menuKeranjang) => (
-                            <ListGroup.Item key={menuKeranjang.id} onClick={() => this.handleShow(menuKeranjang)}>
-                                <Row>
-                                    <Col xs={2}>
-                                        <h4><Badge pill bg="success">{menuKeranjang.jumlah}</Badge></h4>
-                                    </Col>
-                                    <Col>
-                                        <h5>{menuKeranjang.product.nama}</h5>
-                                        <p>Rp.{numberWithCommas(menuKeranjang.product.harga)}</p>
-                                    </Col>
-                                    <Col>
-                                        <strong>Rp.{numberWithCommas(menuKeranjang.total_harga)}</strong>
-                                    </Col>
-                                </Row>
-                            </ListGroup.Item>
-                        ))}
-                    </ListGroup>
+                    <Card className="overflow-auto hasil">
+                        <ListGroup>
+                            <ModalKeranjang handleClose={this.handleClose} {...this.state} tambah={this.tambah} kurang={this.kurang} changeHandler={this.changeHandler} handleSubmit={this.handleSubmit} hapusPesanan={this.hapusPesanan} />
+                            {isiKeranjang.map((menuKeranjang) => (
+                                <ListGroup.Item key={menuKeranjang.id} onClick={() => this.handleShow(menuKeranjang)}>
+                                    <Row>
+                                        <Col xs={2}>
+                                            <h4><Badge pill bg="success">{menuKeranjang.jumlah}</Badge></h4>
+                                        </Col>
+                                        <Col>
+                                            <h5>{menuKeranjang.product.nama}</h5>
+                                            <p>Rp.{numberWithCommas(menuKeranjang.product.harga)}</p>
+                                        </Col>
+                                        <Col>
+                                            <strong>Rp.{numberWithCommas(menuKeranjang.total_harga)}</strong>
+                                        </Col>
+                                    </Row>
+                                </ListGroup.Item>
+                            ))}
+                        </ListGroup>
+                    </Card>
                 )}
                 <TotalHarga keranjangs={isiKeranjang} />
             </Col >
