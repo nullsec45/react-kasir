@@ -26,6 +26,30 @@ export default class Home extends Component {
             .catch(error => {
                 console.log(error)
             })
+        // axios.get(API_URL + "keranjangs")
+        //     .then(res => {
+        //         const isiKeranjang = res.data;
+        //         this.setState({ isiKeranjang });
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //     })
+        this.getListKeranjang();
+    }
+
+    // componentDidUpdate(prevState) {
+    //     if (this.state.isiKeranjang !== prevState.isiKeranjang) {
+    //         axios.get(API_URL + "keranjangs")
+    //             .then(res => {
+    //                 const isiKeranjang = res.data;
+    //                 this.setState({ isiKeranjang });
+    //             })
+    //             .catch(error => {
+    //                 console.log(error)
+    //             })
+    //     }
+    // }
+    getListKeranjang = () => {
         axios.get(API_URL + "keranjangs")
             .then(res => {
                 const isiKeranjang = res.data;
@@ -35,20 +59,6 @@ export default class Home extends Component {
                 console.log(error)
             })
     }
-
-    componentDidUpdate(prevState) {
-        if (this.state.isiKeranjang !== prevState.isiKeranjang) {
-            axios.get(API_URL + "keranjangs")
-                .then(res => {
-                    const isiKeranjang = res.data;
-                    this.setState({ isiKeranjang });
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-        }
-    }
-
     changeCategory = (value) => {
         this.setState({
             categoriYangDipilih: value,
@@ -68,6 +78,7 @@ export default class Home extends Component {
     masukKeranjang = (value) => {
         axios.get(API_URL + "keranjangs?product.id=" + value.id)
             .then((res) => {
+                this.getListKeranjang();
                 if (res.data.length === 0) {
                     const keranjang = {
                         jumlah: 1,
@@ -110,7 +121,7 @@ export default class Home extends Component {
     render() {
         const { menus, categoriYangDipilih, isiKeranjang } = this.state
         return (
-            <div div className="App" >
+            <div className="App" >
                 <div className="mt-2">
                     <Container fluid>
                         <Row>
@@ -118,13 +129,13 @@ export default class Home extends Component {
                             <Col md={6}>
                                 <h5 className='text-center'><strong>Daftar Produk</strong></h5>
                                 <hr />
-                                <Row>
+                                <Row className="overflow-auto menu">
                                     {menus && menus.map((menu) => (
                                         <Menus key={menu.id} menu={menu} masukKeranjang={this.masukKeranjang}></Menus>
                                     ))}
                                 </Row>
                             </Col>
-                            <Hasil isiKeranjang={isiKeranjang} />
+                            <Hasil isiKeranjang={isiKeranjang} getListKeranjang={this.getListKeranjang} />
                         </Row>
                     </Container>
                 </div>
