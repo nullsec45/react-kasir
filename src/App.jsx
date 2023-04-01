@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { NavbarComponent } from "./components";
 import { Home, Sukses } from "./pages";
+// import "./App.css";
 
 
 export default class App extends Component {
