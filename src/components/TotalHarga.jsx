@@ -20,7 +20,6 @@ export default class TotalHarga extends Component {
         }
 
         const submitTotalHarga = (totalHarga) => {
-            console.log(totalHarga);
             const pesanan = {
                 total_harga: totalHarga,
                 menus: this.props.keranjangs
